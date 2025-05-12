@@ -163,7 +163,7 @@ There are various methods for approximating $2^{d}$ with polynomials. I've perso
 
 ![95d610eb-fde8-4215-98d1-97fe3d1bc820](https://github.com/user-attachments/assets/083f0d0f-6c38-4c97-b12a-8fd90fc36931)
 
-Benchmarks were compiled with flags `std=c++20`, `-march=native` (sandybridge), `O2` and the code I used for getting these results is available above. Unfortunately, my CPU does not have AVX2, so I couldn't really benchmark version 3 with SIMD. Also, versions 5 through 8 could be made a little more efficient with AVX2.
+The code for generating benchmarks was compiled with GCC version 13.2.0 and flags `std=c++20`, `-march=native` (sandybridge), `O2` and is available above. For calculating the speedups, I measured the time each version took to approximate exp2 for 100000000 values. Unfortunately, my CPU does not have AVX2, so I couldn't really benchmark version 3 with SIMD. Also, versions 5 through 8 could be made a little more efficient with AVX2.
 
 Notice how the trade-off between accuracy X speed is clearly represented in the graphs: for the scalar version, measuring latency, we can have results up to 2x smaller than they should be, but 15x faster to calculate, while the most precise version, while still inferior to the standard, is "only" about 3x faster to calculate. For bulk calculations, the performance gains are even more pronounced: we can have from 60x faster imprecise values to 40x faster precise values. Even very decent results can get huge speedups with SIMD, that's great!
 
