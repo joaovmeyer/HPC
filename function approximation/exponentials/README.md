@@ -181,7 +181,7 @@ $$ = \frac{|2^{i}| \cdot |2^{d} - (1 + d)|}{|2^{i}| \cdot |2^{d}|} = \frac{|2^{d
 
 To find the maximum relative error, we need to maximize $\frac{1 + d}{2^{d}}$ for $0 \le d < 0$. Taking the derivative and setting it to zero, we get:
 
-$$ \frac{d}{dd} \frac{1 + d}{2^{d}} = \frac{1}{2^{d}} \cdot (1 - \ln(2) - x \cdot \ln(2)) $$
+$$ \frac{d}{dd} \frac{1 + d}{2^{d}} = \frac{1}{2^{d}} \cdot (1 - \ln(2) - d \cdot \ln(2)) $$
 
 $$ \frac{d}{dd} \frac{1 + d}{2^{d}} = 0 \Leftrightarrow d = \frac{1}{\ln(2)} - 1 $$
 
